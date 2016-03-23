@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+<books>
+  <book id="123">
+    <title>Harry Potter</title>
+    <author>Kurt</author>
+    <year>1998</year>
+  </book>
+<book><author>Toby</author><tile>Good</tile><year>1998</year></book>
+<book><author>Jk ROwing</author><tile>Zagan om Ringen</tile><year>2013</year></book><book><author>adsadasda</author><tile>ddad</tile><year>123</year></book></books>

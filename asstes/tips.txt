@@ -1,0 +1,28 @@
+1.  Skapa en xml-fil som innehåller bilder 
+
+2.  Ta reda på hurm man läser in xml filer i javascript
+
+3.  Läsa av xml+filen
+
+4.  Ta ut addressen till bildfilerna och kunna skriva ut det i konsolen
+
+5.  Bygga upp en HTML struktur och kunna lägga in 
+    bilderna i den strukturen . dvs, lägga till noder i html dokumentet
+
+6.  Lagt in två knappar och när man klickar på knappen kunna byta bild.
+
+7.  hålla reda på vilken bild jag är på. just nu gå till nästa bild. Börja med att lunna gå framått.
+
+8.  Hantera vad som händer när man kommer till sista bilden kunna komma till första bilden när man trycker frammåt. 
+
+9.  Kunna gå bakåt.
+
+10. Fixa formulär för at kunna ladd upp bilder, googla. 
+
+11. Lägga till en nod i xml-dokumentet. 
+
+12. Lista alla bilder som finns i xml dokumentet som finns i xml+dokumentet i en admin vy, inkl bild text oc hdatum
+
+13. fixa tabort knappen.
+
+14. css

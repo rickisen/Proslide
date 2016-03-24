@@ -1,1 +1,8 @@
 Users.xml
+.DS_STORE
+.vagrant
+.swp
+adminer.css
+adminer.php
+mysqliConfig-remote.ini
+Thumbs.db

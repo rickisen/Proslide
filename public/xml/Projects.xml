@@ -2,7 +2,7 @@
 <projects>
 	<project id="0" title="qlokast" type="group">
 		<description> A remote school system</description>
-		<slider>
+		<images>
 			<image id="0">
 				<src>/images/qlokast-01.jpg</src>
 				<caption>Framsidan</caption>
@@ -15,6 +15,6 @@
 				<src>/images/qlokast-03.jpg</src>
 				<caption>Profil</caption>
 			</image>
-		</slider>
+		</images>
 	</project>
 </projects>

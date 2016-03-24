@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects>
+	<project id="0" title="qlokast" type="group">
+		<description> A remote school system</description>
+		<images>
+			<image id="0">
+				<src>/images/qlokast-01.jpg</src>
+				<caption>Framsidan</caption>
+			</image>
+			<image id="1">
+				<src>/images/qlokast-02.jpg</src>
+				<caption>Mitt Flow</caption>
+			</image>
+			<image id="2">
+				<src>/images/qlokast-03.jpg</src>
+				<caption>Profil</caption>
+			</image>
+		</images>
+	</project>
+</projects>

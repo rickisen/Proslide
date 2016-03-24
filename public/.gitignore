@@ -1,6 +1,7 @@
 Users.xml
 .DS_STORE
 .vagrant
+.vagrant/
 .swp
 adminer.css
 adminer.php

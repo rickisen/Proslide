@@ -1,6 +1,6 @@
 "use strict"
 
-// first get the XML-file ====================
+// First get the XML-file ====================
 var ajax = new XMLHttpRequest();
 ajax.onreadystatechange = recieveXml() ;
 ajax.open("GET", "/xml/Projects.xml", true); 
@@ -30,14 +30,10 @@ function slideImage(projId, direction = "next") {
 
 	if (direction = "next") {
 		var nextImageId = parseInt(currentImage.getAttribute("xmlId")) + 1;
-		if (nextImageId > images.length - 1) {
-			nextImageId = 0;
-		}
-	}else if (direction = "prev") {
+		nextImageId = nextImageId > images.length - 1 ? 0 : nextImageId;
+	} else if (direction = "prev") {
 		var nextImageId = parseInt(currentImage.getAttribute("xmlId")) - 1;
-		if (nextImageId <  0 ) {
-			nextImageId = images.length - 1;
-		}
+		nextImageId = nextImageId < 0 ? nextImageId = images.length - 1: nextImageId ;
 	} else {
 		return; 
 	}

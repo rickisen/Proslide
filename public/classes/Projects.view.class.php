@@ -16,11 +16,8 @@ class Projects {
 
     // construct all projects found in the xml
     $projects = array();
-    foreach ($sxeRoot->xpath("//project") as $project) {
-      $projects[] = new Project(
-        (int)$project['id'], (string)$project['title'],
-        (string)$project->description, (string)$project['type'] 
-      );
+    foreach ($sxeRoot->xpath("//project") as $sxeProject) {
+      $projects[] = Project::newFromId((int)$sxeProject['id']);
     }
 
     $data['projects'] = $projects ;

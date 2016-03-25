@@ -9,11 +9,10 @@
   <p>Projects in which I've been a member of a group to create.</p>
   <?php foreach($data["projects"] as $project) : ?>
     <?php if ($project->type == "group") : ?>
-      <div class="project" projectId="<?php $project->id ?>">
+      <div class="project" id="<?php echo $project->id ?>">
         <h5><?php echo $project->title ?></h5>
         <p><?php echo $project->description ?></p>
-        <div class="slider">
-        </div>
+        <?php include "templates/slider.php" ?>
       </div>
     <?php endif ?>
   <?php endforeach ?>
@@ -24,11 +23,10 @@
   <p>These here are some projects Iv'e created on my own.</p>
   <?php foreach($data["projects"] as $project) : ?>
     <?php if ($project->type == "solo") : ?>
-      <div class="project" projectId="<?php $project->id ?>">
+      <div class="project" id="<?php echo $project->id ?>">
         <h5><?php $project->title ?></h5>
         <p><?php $project->description ?></p>
-        <div class="slider">
-        </div>
+        <?php include "templates/slider.php" ?>
       </div>
     <?php endif ?>
   <?php endforeach ?>

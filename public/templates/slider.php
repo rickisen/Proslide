@@ -7,5 +7,5 @@
     Next
   </button>
   <div class="clear"></div>
-  <p><?php echo $project->images[0]->caption ?></p>
+  <p class="caption"><?php echo $project->images[0]->caption ?></p>
 </div>

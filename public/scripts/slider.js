@@ -3,15 +3,8 @@
 // first get the XML-file ====================
 var ajax = new XMLHttpRequest();
 ajax.onreadystatechange = recieveXml() ;
-ajax.open("GET", "/xml/Projects.xml", false); // make a syncronos call
+ajax.open("GET", "/xml/Projects.xml", true); 
 ajax.send();
-// xml = ajax.responseXML;
-
-function recieveXml() {
-	if (!ajax.readyState == 4 || !ajax.status == 200) {
-		throw new Error("XML file not recieved"); 
-	}
-}
 
 // Add listners to all the buttons ====================
 var buttons = document.getElementsByClassName("sliderBtn"); 
@@ -25,22 +18,28 @@ for (var i = 0, len = buttons.length; i < len; i++) {
 	
 }
 
+// FUNCTIONS ========================================
+//
 function slideImage(projId, direction = "next") {
 	// function that loads the next image in a slider.
-	// direction can be next, prev, first and last.
-	var slider = getProjSlider(projId);
-	var images = getProjImagesFromXml(projId);
-	var currentImage = getProjCurrentImage(projId);
+	// direction can be next or prev.
+	var proj         = document.getElementById("proj-" + projId) ;
+	var slider       = proj.getElementsByClassName("slider")[0];
+	var currentImage = slider.getElementsByTagName("img")[0];
+	var images       = getProjImagesFromXml(projId);
 
-	switch (direction) {
-		case 'next':
-			var nextImageId = parseInt(currentImage.getAttribute("xmlId")) + 1;
-			break;
-		case 'prev':
-			var nextImageId = parseInt(currentImage.getAttribute("xmlId")) - 1;
-			break;
-		default:
-			var nextImageId = parseInt(currentImage.getAttribute("xmlId")) + 1;
+	if (direction = "next") {
+		var nextImageId = parseInt(currentImage.getAttribute("xmlId")) + 1;
+		if (nextImageId > images.length - 1) {
+			nextImageId = 0;
+		}
+	}else if (direction = "prev") {
+		var nextImageId = parseInt(currentImage.getAttribute("xmlId")) - 1;
+		if (nextImageId <  0 ) {
+			nextImageId = images.length - 1;
+		}
+	} else {
+		return; 
 	}
 
 	// fetch the next image
@@ -50,25 +49,11 @@ function slideImage(projId, direction = "next") {
 		} 
 	}
 
-	console.log(nextImageId); 
-	// replace the current image
+	// replace the current Image/slide
 	currentImage.src = nextImage.getElementsByTagName("src")[0].innerHTML;
-}
+	currentImage.setAttribute("xmlid", nextImage.id); 
+	slider.getElementsByClassName("caption")[0].textContent = nextImage.getElementsByTagName("caption")[0].innerHTML;
 
-// Project related functions ====================
-// Should probably be rewritten more OOP-style
-
-function getProjCurrentImage(projId) {
-	var proj = document.getElementById(projId) ;
-	if (proj) {
-		var image = proj.getElementsByTagName("img")[0];
-	}
-
-	if ( proj && image ){
-		return image;
-	}
-
-	return false;
 }
 
 function getProjImagesFromXml(projId) {
@@ -85,16 +70,8 @@ function getProjImagesFromXml(projId) {
 	return foundProject.getElementsByTagName("image"); 
 }
 
-function getProjSlider(projId) {
-	var projectElem = document.getElementById(projId);
-
-	if (projectElem.children) {
-		for (var i = 0, len = projectElem.children.length; i < len; i++) {
-			if( projectElem.children[i].class == "slider"){
-				return projectElem.children[i]; 
-			}
-		}
+function recieveXml() {
+	if (!ajax.readyState == 4 || !ajax.status == 200) {
+		throw new Error("XML file not recieved"); 
 	}
-
-	return false;
 }

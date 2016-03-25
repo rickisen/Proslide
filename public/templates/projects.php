@@ -5,12 +5,12 @@
 </p>
 
 <div class="projects" id="groupProjects">
-  <h3>Group Projects</h3>
+  <h2>Group Projects</h2>
   <p>Projects in which I've been a member of a group to create.</p>
   <?php foreach($data["projects"] as $project) : ?>
     <?php if ($project->type == "group") : ?>
       <div class="project" id="proj-<?php echo $project->id ?>">
-        <h5><?php echo $project->title ?></h5>
+        <h3><?php echo $project->title ?></h3>
         <p><?php echo $project->description ?></p>
         <?php include "templates/slider.php" ?>
       </div>
@@ -19,12 +19,12 @@
 </div>
 
 <div class="projects" id="soloProjects">
-  <h3>Solo Projects</h3>
+  <h2>Solo Projects</h2>
   <p>These here are some projects Iv'e created on my own.</p>
   <?php foreach($data["projects"] as $project) : ?>
     <?php if ($project->type == "solo") : ?>
       <div class="project" id="proj-<?php echo $project->id ?>">
-        <h5><?php $project->title ?></h5>
+        <h3><?php $project->title ?></h3>
         <p><?php $project->description ?></p>
         <?php include "templates/slider.php" ?>
       </div>

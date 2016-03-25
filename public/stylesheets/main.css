@@ -1,17 +1,40 @@
+/* gamebookers by plamenjC licence C-BY-NC-SA */
+/* rgb(50, 153, 187); */
+/* rgb(255, 153, 0); */
+/* rgb(66, 66, 66); */
+/* rgb(233, 233, 233); */
+/* rgb(188, 188, 188); */
+
 body{
-  background-color: #555;
+  background-image:url(http://put.nu/files/okXkft9.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color:#fff;
+  color:#282828;
 }
 
 h1,h2,h3,h4,h5,h6{
   text-transform: capitalize;
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  font-family: 'Arimo', sans-serif;
+}
+
+div {
+  box-sizing:border-box;
 }
 
 #wrapper {
-  padding:20px;
-  background-color:#ddd;
-  width:800px;
+  background-color:rgb(233, 233, 233);
+  width:960px;
   margin:20px auto;
-  border: 1px solid #999;
+  padding:5px;
+  box-shadow:0 4px 8px #222;
+  border-top:5px solid rgb(50, 153, 187);
+  box-sizing:border-box;
 }
 
 .left {
@@ -27,21 +50,35 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .projects {
-  margin:10px;
-  padding:5px;
-  border:1px solid #aaa;
+  background-color:rgb(188, 188, 188);
+  margin:50px -5px;
+  padding:5px ;
+  border-top:5px solid rgb(255, 153, 0);
+  box-sizing:border-box;
 }
 
 .project {
-  margin:10px;
+  background-color:rgb(66, 66, 66);
+  color:rgb(188, 188, 188);
+  margin:0 -5px;
   padding:5px;
-  border:1px solid #aaa;
+  border-top:5px solid rgb(200, 59, 40);
+  box-sizing:border-box;
 }
 
 .slider {
-  border:1px solid #d72;
 }
 
 .slider img {
-  max-width:100%;
+  margin: 0 -5px;
+  max-width:960px;
+}
+
+#footer {
+  border-top:5px solid rgb(20, 150, 40);
+  box-sizing:border-box;
+  background-color:rgb(188,188,188);
+  color:#fff;
+  margin:5px -5px -5px -5px;
+  padding:5px ;
 }

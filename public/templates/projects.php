@@ -12,7 +12,9 @@
       <div class="project" id="proj-<?php echo $project->id ?>">
         <h3><?php echo $project->title ?></h3>
         <p><?php echo $project->description ?></p>
-        <?php include "templates/slider.php" ?>
+        <?php if (count($project->images) > 0) : ?>
+            <?php include "templates/slider.php" ?>
+        <?php endif ?>
       </div>
     <?php endif ?>
   <?php endforeach ?>
@@ -26,7 +28,9 @@
       <div class="project" id="proj-<?php echo $project->id ?>">
         <h3><?php $project->title ?></h3>
         <p><?php $project->description ?></p>
-        <?php include "templates/slider.php" ?>
+        <?php if (count($project->images) > 0) : ?>
+            <?php include "templates/slider.php" ?>
+        <?php endif ?>
       </div>
     <?php endif ?>
   <?php endforeach ?>

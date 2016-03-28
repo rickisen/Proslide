@@ -1,5 +1,16 @@
-<form action="<?php $action ?>" method="post" accept-charset="utf-8">
-  <label for="Caption">Caption</label><input type="text" name="Caption" value="" id="Caption">
-  <label for="Image">Image</label><input type="file" name="Image" value="" id="Image">
-  <p><input type="submit" value="upload"></p>
+<form action="/?/Admin/addProject" method="post" accept-charset="utf-8">
+  <input type="hidden" name="type" value="<?php echo $projType ?>">
+
+  <label for="Title">Title</label>
+  <input type="text" name="Title" value="" id="Title">
+  <br/>
+
+  <label>Description</label>
+  <textarea name="Description">
+  </textarea>
+  <br/>
+
+  <p><input type="submit" value="submit"></p>
 </form>
+
+<?php unset($projType) ?>

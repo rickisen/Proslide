@@ -1,6 +1,18 @@
-<form action="<?php $action ?>" method="post" accept-charset="utf-8">
-  <label for="Title">Title</label><input type="text" name="Title" value="" id="Title">
-  <label for="Description">Description</label><input type="text" name="Description" value="" id="Description">
-  <label for="firstImage">First Image</label><input type="file" name="firstImage" value="" id="firstImage">
+<form action="/?/Admin/addImage" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+  <h3>Add Image</h3>
+  <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+  <input type="hidden" name="projId" value="<?php echo $projId ?>"/>
+    
+  <label>Image</label>
+  <input type="file" name="Image"/>
+  <br/>
+
+  <label>Caption</label>
+  <textarea name="Caption">
+  </textarea>
+  <br/>
+
   <p><input type="submit" value="submit"></p>
 </form>
+
+<?php unset($projId) ?>

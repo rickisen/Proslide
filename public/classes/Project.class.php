@@ -51,10 +51,13 @@ class Project {
     }
   }
 
-  function writeToProjectsXml($projectsXmlFile = 'xml/Projects.xml'){
+  function writeToProjectsXml(){
+    if (!isset($_SESSION['currentUser'])){
+      return false;
+    }
+
     // load and instantize the xml file
-    $sxeFile = simplexml_load_file($projectsXmlFile);
-    $xmlDb = new SimpleXMLElement($sxeFile->asXML());
+    $xmlDb = XmlDb::getInstance();
 
     // if there already is a project with this id, we edit it 
     // instead of creating a new one
@@ -76,6 +79,8 @@ class Project {
     $sxeProject['type']  = $this->type;
 
     // finaly write it to file
-    $xmlDb->asXML($projectsXmlFile);
+    $xmlDb->asXML(XmlDb::getFile());
+
+    return true;
   }
 }

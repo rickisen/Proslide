@@ -2,16 +2,29 @@
 
 class XmlDb{
   private static $instance;
+  private static $file;
   private static $users;
+
   private function __construct(){}
   private function __clone(){}
 
-  public static function getInstance(){
-    if(!self::$instance){
+  public static function getFile(){
+    if(!self::$file){
       $config = parse_ini_file('config.ini');
 
       // load and instantize the xml file
-      $sxeFile = simplexml_load_file($config['dbPath']);
+      self::$file = $config['dbPath'];
+
+      return self::$file;
+    } else {
+      return self::$file;
+    }
+  }
+
+  public static function getInstance(){
+    if(!self::$instance){
+
+      $sxeFile = simplexml_load_file(self::getFile());
       self::$instance = new SimpleXMLElement($sxeFile->asXML());
 
       return self::$instance;

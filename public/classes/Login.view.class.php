@@ -13,11 +13,9 @@ class Login{
     $_SESSION['currentUser'] = new User($_POST['userName'], $_POST['password']);
 
     if ($_SESSION['currentUser']->authenticate()){
-      echo "logged in";
       require_once "Admin.view.class.php"; 
       return Admin::edit();
     } else {
-      echo "not allowed";
       require_once "Projects.view.class.php"; 
       unset($_SESSION['currentUser']);
       return Projects::all();

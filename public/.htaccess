@@ -1,1 +1,2 @@
 redirect /xml/Users.xml /index.php
+redirect /config.ini /index.php

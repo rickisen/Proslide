@@ -57,7 +57,7 @@ function getProjImagesFromXml(projId) {
 
 	// maybe replace with getElementById
 	for (var project in projects) {
-		if(projects[project].id = projId){
+		if(projects[project].id == projId){
 			var foundProject = projects[project];
 			break;
 		}

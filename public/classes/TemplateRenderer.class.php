@@ -6,7 +6,11 @@ class TemplateRenderer{
 
   public static function render($data){
     include 'templates/header.php';
-    
+
+/*     if (!isset($data['loadview'])) { */
+/*       $data['loadview'] = 'projects'; */ 
+/*     } */
+
     include 'templates/'.$data['loadview'].'.php';
 
     include 'templates/footer.php';

@@ -1,4 +1,5 @@
 <?php
+require_once "classes/User.class.php";
 require_once "classes/XmlDb.class.php";
 
 session_start();
@@ -30,7 +31,6 @@ TemplateRenderer::render($data);
 // string with the '/' character 
 // as a delimiter and returns that array
 function getUrlParts($get){
-  $database   = DB::getInstance();
 	$get_params = array_keys($get);
 	$url        = $get_params[0];
 

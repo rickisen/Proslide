@@ -9,10 +9,6 @@ class TemplateRenderer{
     
     include 'templates/'.$data['loadview'].'.php';
 
-    /* echo "<pre>"; */
-    /* print_r($data); */
-    /* echo "</pre>"; */
-
     include 'templates/footer.php';
   }
 }

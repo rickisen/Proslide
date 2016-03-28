@@ -12,15 +12,12 @@ body{
   background-attachment: fixed;
   background-color:#fff;
   color:#282828;
+  font-family: 'Arimo', sans-serif;
 }
 
 h1,h2,h3,h4,h5,h6{
   text-transform: capitalize;
   font-family: 'Raleway', sans-serif;
-}
-
-p {
-  font-family: 'Arimo', sans-serif;
 }
 
 div {
@@ -50,8 +47,8 @@ div {
 }
 
 .projects {
-  background-color:rgb(188, 188, 188);
-  margin:50px -5px;
+  background-color:rgb(210, 210, 210);
+  margin:0px -5px;
   padding:5px ;
   border-top:5px solid rgb(255, 153, 0);
   box-sizing:border-box;
@@ -66,7 +63,21 @@ div {
   box-sizing:border-box;
 }
 
-.slider {
+.container{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.flexObject{
+  flex-grow:1;
+}
+
+.smallImages, .projectForm{
+  width:50%;
+}
+
+.smallImages img {
+  width:10em;
 }
 
 .slider img {
@@ -79,6 +90,6 @@ div {
   box-sizing:border-box;
   background-color:rgb(188,188,188);
   color:#fff;
-  margin:5px -5px -5px -5px;
+  margin:0px -5px -5px -5px;
   padding:5px ;
 }

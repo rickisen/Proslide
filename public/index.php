@@ -1,4 +1,6 @@
 <?php
+require_once "classes/XmlDb.class.php";
+
 session_start();
 
 // ROUTING ==================================================

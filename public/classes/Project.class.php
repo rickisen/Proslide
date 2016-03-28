@@ -17,12 +17,10 @@ class Project {
 
   // Alternative constructor
   public static function newFromId($id, $projectsXmlFile = 'xml/Projects.xml'){
-    // load and the xml file
-    $sxeFile = simplexml_load_file($projectsXmlFile);
-    $sxeRoot = new SimpleXMLElement($sxeFile->asXML());
+    $xmlDb = XmlDb::getInstance(); // load and the xml file
 
     // get the first (and only) project with this id
-    $results = $sxeRoot->xpath('/projects/project[@id="'.$id.'"]');
+    $results = $xmlDb->xpath('/projects/project[@id="'.$id.'"]');
     if (!empty($results)) {
       $sxeProject = $results[0]; 
     } else {
@@ -56,16 +54,16 @@ class Project {
   function writeToProjectsXml($projectsXmlFile = 'xml/Projects.xml'){
     // load and instantize the xml file
     $sxeFile = simplexml_load_file($projectsXmlFile);
-    $sxeRoot = new SimpleXMLElement($sxeFile->asXML());
+    $xmlDb = new SimpleXMLElement($sxeFile->asXML());
 
     // if there already is a project with this id, we edit it 
     // instead of creating a new one
-    $results = $sxeRoot->xpath('/projects/project[@id="'.$this->id.'"]');
+    $results = $xmlDb->xpath('/projects/project[@id="'.$this->id.'"]');
     if (!empty($results)) {
       $sxeProject = $results[0]; 
     } else {
       // add the project, it's basic attributes and children
-      $sxeProject = $sxeRoot->addChild("project"); 
+      $sxeProject = $xmlDb->addChild("project"); 
       $sxeProject->addAttribute("id", $this->id);
       $sxeImages = $sxeProject->addChild("images"); 
     }
@@ -78,6 +76,6 @@ class Project {
     $sxeProject['type']  = $this->type;
 
     // finaly write it to file
-    $sxeRoot->asXML($projectsXmlFile);
+    $xmlDb->asXML($projectsXmlFile);
   }
 }

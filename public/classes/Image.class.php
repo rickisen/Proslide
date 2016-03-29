@@ -120,5 +120,28 @@ class Image{
 
     return true;
   }
+  
+  function RemoveFromProjectsXml(){
+    if (!isset($_SESSION['currentUser'])){
+      return false;
+    }
+
+    // load and instantize the xml file
+    $xmlDb = XmlDb::getInstance();
+
+    // find the Image, And NUKE it!
+    $results = $xmlDb->xpath('/projects/project[@id="'.$this->parent.'"]/images/image[@id="'.$this->id.'"]');
+    if (!empty($results)) {
+      unlink(realpath( ".".(string)$results[0]->src )); 
+      unset($results[0][0]); // magically removes the image tag
+    } else {
+      throw new RuntimeException("Can not find image to remove"); 
+    }
+
+    // write the changes to file
+    $xmlDb->asXML(XmlDb::getFile());
+
+    return true;
+  }
 
 }

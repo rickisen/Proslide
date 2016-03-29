@@ -20,6 +20,10 @@ h1,h2,h3,h4,h5,h6{
   font-family: 'Raleway', sans-serif;
 }
 
+header a {
+  color:rgb(50, 153, 187);
+}
+
 div {
   box-sizing:border-box;
 }
@@ -85,7 +89,7 @@ div {
   max-width:960px;
 }
 
-#footer {
+footer {
   border-top:5px solid rgb(20, 150, 40);
   box-sizing:border-box;
   background-color:rgb(188,188,188);

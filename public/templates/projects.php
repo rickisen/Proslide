@@ -1,4 +1,3 @@
-<h1> Rickisen's School Projects </h1>
 <p> 
   Here You will find some of the projects I've been involved with 
   creating or which I have created by my self so far in my studies att MI 

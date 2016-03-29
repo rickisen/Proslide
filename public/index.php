@@ -10,15 +10,27 @@ session_start();
 // based on what getrequests we get, 
 // or just load the default view-class
 if( ! empty($_GET)  ) {
+  $allowedViews = ["Project", "Login"]; 
+
   $url_parts = getUrlParts($_GET) ;
   $class     = array_shift($url_parts);
   $method    = array_shift($url_parts);
 
-  require_once("classes/".$class.".view.class.php"); 
-  $data = $class::$method($url_parts); 
+  if (in_array($class,$allowedViews) || isset($_SESSION['currentUser'])){
+    require_once("classes/".$class.".view.class.php"); 
+    $data = $class::$method($url_parts); 
+  } else {
+    require_once("classes/Login.view.class.php"); 
+    $data = Login::form();
+  }
 } else { // default view
   require_once("classes/Projects.view.class.php"); 
   $data = Projects::all();
+}
+
+// in case a function did not give the loadview setting
+if (!isset($data['loadview'])){
+  $data['loadview'] = "projects"; 
 }
 
 // Render a page from php templates

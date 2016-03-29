@@ -16,7 +16,7 @@ class Project {
   }
 
   // Alternative constructor
-  public static function newFromId($id, $projectsXmlFile = 'xml/Projects.xml'){
+  public static function newFromId($id){
     $xmlDb = XmlDb::getInstance(); // load and the xml file
 
     // get the first (and only) project with this id
@@ -39,6 +39,16 @@ class Project {
     }
 
     return $ret;
+  }
+
+  public static function nextId(){
+    $xmlDb = XmlDb::getInstance(); // load and the xml file
+
+    $projects = $xmlDb->xpath("//project"); 
+    $lastId = (int)$projects[count($projects) - 1]['id'];
+    $nextId = $lastId + 1 ;
+
+    return $nextId;
   }
 
   function __get($val){

@@ -10,4 +10,14 @@
 </head>
 <body>
 <div id="wrapper">
-
+<header>
+  <a href="/"> <h1 class="left"> Rickisen's School Projects </h1> </a>
+  <?php if (isset($_SESSION['currentUser'])) : ?>
+    <div class="right">
+      Logged in as <?php echo $_SESSION['currentUser']->name ?>
+      <a href="/?/Admin/edit">Admin</a>
+      <a href="/?/Login/logout">Log out</a>
+    </div>
+  <?php endif ?>
+  <div class="clear"></div>
+</header>

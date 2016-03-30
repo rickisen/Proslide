@@ -34,7 +34,7 @@ class Project {
     // attach images
     foreach($sxeProject->images->image as $image){
       $ret->images[] = new Image(
-        (string)$image['id'], (string)$image->src, (int)$sxeProject['id'], (string)$image->caption
+        (string)$image['id'], (string)$image->src, (int)$sxeProject['id'], (string)$image->caption,(string)$image->title 
       );
     }
 

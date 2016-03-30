@@ -4,5 +4,6 @@
   </footer>
  </div> <!-- wrapper end -->
 <script type="text/javascript" charset="utf-8" src="/scripts/slider.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/scripts/cardStack.js"> </script>
 </body>
 </html>

@@ -2,14 +2,25 @@
   <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
   <input type="hidden" name="projId" value="<?php echo $projId ?>"/>
 
-  <input class="flexObject" type="text" name="Title" value="" id="Title">
+  <div class="flexObject">
+    <label for="Title">Title</label>
+    <input type="text/submit/hidden/button" name="Title"/>
+  </div>
   
-  <textarea class="flexObject" rows="10" name="Caption">
-  </textarea>
+  <div class="flexObject flexBig">
+    <label for="Caption">Caption</label>
+    <textarea name="Caption" rows="8" cols="40" ></textarea>
+  </div>
   
-  <input class="flexObject" type="file" name="Image"/>
+  <div class="flexObject">
+    <label for="Image">Image File</label>
+    <input type="file" name="Image"/>
+  </div>
 
-  <input class="flexObject" type="submit" value="submit">
+  <div class="flexObject">
+    <input type="submit" value="submit"/>
+  </div>
 </form>
+
 
 <?php unset($projId) ?>

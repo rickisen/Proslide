@@ -20,25 +20,26 @@
         <p><?php echo $project->description ?></p>
 
         <div class="container">
-          <div class="projectforms">
+          <div class="flexObject flexBig">
             <fieldset>
               <legend>Remove Images</legend>
-              <form id="<?php echo "proj-".$project->id."-imageForm" ?>" method="post" action="/?/Admin/removeImages" class="container">
+              <form id="<?php echo "proj-".$project->id."-imageForm" ?>" method="post" action="/?/Admin/removeImages" >
                 <input type="hidden" value="<?php echo $project->id?>" name="removeFromProject" />
-                <?php foreach($project->images as $image) : ?>
-                  <div class="flexObject imageCard">
-                    <img src="<?php echo $image->src ?>"/>
-                    <p><?php echo $image->caption ?></p>
-                    <input type="checkbox" value="<?php echo $image->id ?>" name="removeImages[]"/>
-                  </div>
-                <?php endforeach ?>
+                <div class="container">
+                  <?php foreach($project->images as $image) : ?>
+                    <div class="flexObject imageCard">
+                      <input type="checkbox" value="<?php echo $image->id ?>" name="removeImages[]"/>
+                      <img src="<?php echo $image->src ?>"/>
+                      <p><?php echo $image->caption ?></p>
+                    </div>
+                  <?php endforeach ?>
+                </div>
+                <button type="submit">Remove Selected</button>
               </form>
-              <button class="right" form="<?php echo "proj-".$project->id."-imageForm" ?>" type="submit">Apply</button>
-              <div class="clear"></div>
             </fieldset>
           </div>
 
-          <div class="projectforms">
+          <div class="flexObject ">
             <fieldset>
               <legend>Add New Image</legend>
                 <?php $projId = $project->id ; include "addImageForm.php" ?>

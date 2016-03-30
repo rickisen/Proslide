@@ -5,12 +5,14 @@ class Image{
   private $id;
   private $parent;
   private $caption;
+  private $title;
 
-  function __construct($id, $src, $parent, $caption){
+  function __construct($id, $src, $parent, $caption, $title){
     $this->id      = $id;
     $this->src     = $src;
     $this->parent  = $parent;
     $this->caption = $caption;
+    $this->title = $title;
   }
 
   function __get($val){
@@ -107,8 +109,9 @@ class Image{
     $sxeImage = $sxeProject->images->addChild("image");
 
     // edit/add child nodes
-    $sxeImage->caption = $this->caption;
     $sxeImage->src = $this->src;
+    $sxeImage->caption = $this->caption;
+    $sxeImage->title = $this->title;
 
     // edit/add attributes
     $sxeImage['id'] = $this->id;

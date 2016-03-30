@@ -1,5 +1,10 @@
+<h3>Add New Project</h3>
 <form action="/?/Admin/addProject" method="post" accept-charset="utf-8">
-  <input type="hidden" name="type" value="<?php echo $projType ?>">
+  <label for="type">Type</label>
+  <select name="type">
+    <option value="group">Group Project</option>
+    <option value="solo">Solo Project</option>
+  </select>
 
   <label for="Title">Title</label>
   <input type="text" name="Title" value="" id="Title">
@@ -13,4 +18,3 @@
   <p><input type="submit" value="submit"></p>
 </form>
 
-<?php unset($projType) ?>

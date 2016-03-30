@@ -53,8 +53,12 @@ class Admin{
         count($_POST['removeImages']) > 0 ){
       $project = Project::newFromId($_POST['removeFromProject']);
 
-      foreach ($_POST['removeImages'] as $imageId) {
-        $project->images[$imageId]->RemoveFromProjectsXml();
+      // Go through each image in the project and 
+      // if its id matches one requested for removal, nuke it.
+      foreach ($project->images as $image) {
+        if (in_array($image->id, $_POST['removeImages'])) {
+          $image->RemoveFromProjectsXml();
+        }
       }
     }
   }

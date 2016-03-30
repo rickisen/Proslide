@@ -16,7 +16,7 @@ if( ! empty($_GET)  ) {
   $class     = array_shift($url_parts);
   $method    = array_shift($url_parts);
 
-  if (in_array($class,$allowedViews) || isset($_SESSION['currentUser'])){
+  if (in_array($class, $allowedViews) || isset($_SESSION['currentUser'])){
     require_once("classes/".$class.".view.class.php"); 
     $data = $class::$method($url_parts); 
   } else {
@@ -33,7 +33,7 @@ if (!isset($data['loadview'])){
   $data['loadview'] = "projects"; 
 }
 
-// Render a page from php templates
+// Render the page from php templates
 require_once("classes/TemplateRenderer.class.php"); 
 TemplateRenderer::render($data);
 

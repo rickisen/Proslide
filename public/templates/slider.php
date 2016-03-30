@@ -8,5 +8,6 @@
     Next
   </button>
   <div class="clear"></div>
+  <h4 class="title"><?php echo $project->images[0]->title ?></h4>
   <p class="caption"><?php echo $project->images[0]->caption ?></p>
 </div>

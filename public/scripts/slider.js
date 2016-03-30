@@ -52,6 +52,7 @@ function slideImage(projId, direction = "next") {
 	// replace the current Images attributes to the next image
 	currentImage.src = nextImage.getElementsByTagName("src")[0].innerHTML;
 	currentImage.setAttribute("xmlid", nextImage.id); 
+	slider.getElementsByClassName("title")[0].textContent = nextImage.getElementsByTagName("title")[0].innerHTML;
 	slider.getElementsByClassName("caption")[0].textContent = nextImage.getElementsByTagName("caption")[0].innerHTML;
 
 }

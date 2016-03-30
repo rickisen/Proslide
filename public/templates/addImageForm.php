@@ -1,18 +1,15 @@
-<form action="/?/Admin/addImage" enctype="multipart/form-data" method="post" accept-charset="utf-8">
-  <h3>Add Image</h3>
+<form action="/?/Admin/addImage" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="container vertical">
   <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
   <input type="hidden" name="projId" value="<?php echo $projId ?>"/>
-    
-  <label>Image</label>
-  <input type="file" name="Image"/>
-  <br/>
 
-  <label>Caption</label>
-  <textarea name="Caption">
+  <input class="flexObject" type="text" name="Title" value="" id="Title">
+  
+  <textarea class="flexObject" rows="10" name="Caption">
   </textarea>
-  <br/>
+  
+  <input class="flexObject" type="file" name="Image"/>
 
-  <p><input type="submit" value="submit"></p>
+  <input class="flexObject" type="submit" value="submit">
 </form>
 
 <?php unset($projId) ?>

@@ -1,5 +1,6 @@
 <div class="slider">
   <img xmlId="<?php echo $project->images[0]->id ?>" src="<?php echo $project->images[0]->src ?>"/>
+  <br/>
   <button projId="<?php echo $project->id ?>" direction="prev" class="sliderBtn">
     Prev
   </button>

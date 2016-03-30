@@ -15,9 +15,14 @@ body{
   font-family: 'Arimo', sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,legend{
   text-transform: capitalize;
   font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+legend {
+  font-size: 1.2em;
 }
 
 header a {
@@ -26,6 +31,10 @@ header a {
 
 div {
   box-sizing:border-box;
+}
+
+form label{
+  display:block;
 }
 
 #wrapper {
@@ -72,16 +81,38 @@ div {
   flex-wrap:wrap;
 }
 
-.flexObject{
-  flex-grow:1;
+.vertical {
+  flex-direction:column;
+  justify-content:space-between;
 }
 
-.smallImages, .projectForm{
+.vertical .flexObject{
+  width:20em;
+  flex-grow:0;
+}
+
+.flexObject{
+  flex-basis:1em;
+  flex:1;
+}
+
+.imageCard img{
+  width:10em;
+}
+
+.projectforms {
+  flex:1;
+  box-sizing:border-box;
   width:50%;
 }
 
-.smallImages img {
-  width:10em;
+.projectforms fieldset{
+  box-sizing:border-box;
+  height:100%;
+}
+
+fieldset form{
+  height:100%;
 }
 
 .slider img {

@@ -65,7 +65,6 @@ class Image{
       throw new RuntimeException('Exceeded filesize limit.');
     }
 
-    // DO NOT TRUST $_FILES['Image']['mime'] VALUE !!
     // Check MIME Type 
     $finfo = new finfo(FILEINFO_MIME_TYPE);
     if (false === $ext = array_search(
@@ -81,8 +80,7 @@ class Image{
     }
 
     // name it uniquely.
-    // DO NOT USE $_FILES['Image']['name'] WITHOUT ANY VALIDATION !!
-    $newFileName = sprintf('sliderImages/%s.%s', sha1_file($_FILES['Image']['tmp_name']), $ext);
+    $newFileName = sprintf('sliderImages/%s.%s', uniqid(), $ext);
     if (!move_uploaded_file( $_FILES['Image']['tmp_name'], $newFileName )) {
       throw new RuntimeException('Failed to move uploaded file.');
     }

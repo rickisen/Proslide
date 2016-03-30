@@ -28,24 +28,28 @@ function slideImage(projId, direction = "next") {
 	var currentImage = slider.getElementsByTagName("img")[0];
 	var images       = getProjImagesFromXml(projId);
 
-	if (direction = "next") {
-		var nextImageId = parseInt(currentImage.getAttribute("xmlId")) + 1;
-		nextImageId = nextImageId > images.length - 1 ? 0 : nextImageId;
-	} else if (direction = "prev") {
-		var nextImageId = parseInt(currentImage.getAttribute("xmlId")) - 1;
-		nextImageId = nextImageId < 0 ? nextImageId = images.length - 1: nextImageId ;
+	var currentImageId = currentImage.getAttribute("xmlId")
+
+	// find the current-image's array index in the images array
+	for (var i = 0, len = images.length; i < len; i++) {
+		if( images[i].id ==  currentImageId ){
+			var currentImageIndex = i ;
+ 		}
+	}
+
+	if ( direction == "next" ) {
+		var nextImageIndex = currentImageIndex + 1;
+		nextImageIndex = nextImageIndex > images.length - 1 ? 0 : nextImageIndex;
+	} else if ( direction == "prev" ) {
+		var nextImageIndex = currentImageIndex - 1;
+		nextImageIndex = nextImageIndex < 0 ? nextImageIndex = images.length - 1: nextImageIndex ;
 	} else {
 		return; 
 	}
 
-	// fetch the next image
-	for (var i = 0, len = images.length; i < len; i++) {
-		if (images[i].id == nextImageId) {
-			var nextImage = images[i];
-		} 
-	}
+	var nextImage = images[nextImageIndex];
 
-	// replace the current Image/slide
+	// replace the current Images attributes to the next image
 	currentImage.src = nextImage.getElementsByTagName("src")[0].innerHTML;
 	currentImage.setAttribute("xmlid", nextImage.id); 
 	slider.getElementsByClassName("caption")[0].textContent = nextImage.getElementsByTagName("caption")[0].innerHTML;

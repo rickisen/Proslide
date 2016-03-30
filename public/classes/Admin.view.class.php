@@ -28,23 +28,19 @@ class Admin{
 
     try {
       $imageFileName = Image::handleFileUpload(); 
-    }
-    catch (RuntimeException $e) {
+    } catch (RuntimeException $e) {
       /* echo $e->getMessage(); */
-      return Projects::all(); 
+      header("location:/?/Admin/edit"); 
     }
 
-    if (!empty($imageFileName) && isset($_POST['projId']) && isset($_POST['Caption'])){
-      $freshImage = new Image(Image::nextId($_POST['projId']), "/sliderImages/$imageFileName", $_POST['projId'], $_POST['Caption'] ); 
+    if (!empty($imageFileName) && isset($_POST['Title']) && isset($_POST['projId']) && isset($_POST['Caption'])){
+      $freshImage = new Image(Image::nextId($_POST['projId']), "/sliderImages/$imageFileName", $_POST['projId'], $_POST['Caption'], $_POST['Title'] ); 
     } else {
       throw new RuntimeException("Failed to recieve image post"); 
     }
 
-    if ($freshImage->writeToProjectsXml()){
-      return self::edit();
-    } else {
-      return Projects::all(); 
-    }
+    $freshImage->writeToProjectsXml(); 
+    header("location:/?/Admin/edit"); 
   }
 
   public static function removeImages(){
@@ -61,6 +57,7 @@ class Admin{
         }
       }
     }
+    header("location:/?/Admin/edit"); 
   }
 
   public static function addProject(){
@@ -68,11 +65,9 @@ class Admin{
     $xmlDb = XmlDb::getInstance(); // load and the xml file
 
     $newProject = new Project(Project::nextId(), $_POST['Title'], $_POST['Description'], $_POST['type']); 
-    if ($newProject->writeToProjectsXml()){
-      return self::edit();
-    } else {
-      return Projects::all(); 
-    }
+    $newProject->writeToProjectsXml(); 
+
+    header("location:/?/Admin/edit"); 
   }
 
 }

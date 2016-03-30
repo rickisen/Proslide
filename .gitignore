@@ -1,4 +1,7 @@
 Users.xml
+Projects.xml
+sliderImages/
+
 .DS_STORE
 .vagrant
 .vagrant/
@@ -7,3 +10,4 @@ adminer.css
 adminer.php
 mysqliConfig-remote.ini
 Thumbs.db
+

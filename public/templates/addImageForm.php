@@ -9,7 +9,7 @@
   
   <div class="flexObject flexBig">
     <label for="Caption">Caption</label>
-    <textarea name="Caption" rows="8" cols="40" ></textarea>
+    <textarea name="Caption" rows="8" cols="40"></textarea>
   </div>
   
   <div class="flexObject">

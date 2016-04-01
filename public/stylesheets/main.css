@@ -10,6 +10,7 @@ body{
   background-size:cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position:center;
   background-color:#fff;
   color:#282828;
   font-family: 'Arimo', sans-serif;
@@ -25,7 +26,7 @@ legend {
   font-size: 1.2em;
 }
 
-header a {
+a {
   color:rgb(50, 153, 187);
 }
 
@@ -64,18 +65,35 @@ form input, form textarea{
   clear:both;
 }
 
+.card,.stack {
+  margin:0px -5px;
+  overflow:hidden;
+}
+
+.card{
+  left:5px;
+  box-shadow:0 0 3px rgba(10, 10, 10, 0.5);
+}
+
+.card header {
+  margin:-5px;
+  padding: 5px;
+}
+
+.project header {
+  background-color:rgb(66 , 66, 66);
+}
+
 .projects {
   background-color:rgb(210, 210, 210);
-  margin:0px -5px;
   padding:5px ;
   border-top:5px solid rgb(255, 153, 0);
   box-sizing:border-box;
 }
 
 .project {
-  background-color:rgb(66, 66, 66);
+  background-color:rgb(50 , 50, 50);
   color:rgb(188, 188, 188);
-  margin:0 -5px;
   padding:5px;
   border-top:5px solid rgb(200, 59, 40);
   box-sizing:border-box;
@@ -146,4 +164,18 @@ footer {
   color:#fff;
   margin:0px -5px -5px -5px;
   padding:5px ;
+}
+
+/* card stuff be here */ 
+
+.card {
+  overflow:hidden; 
+  height:1000px;
+  width:100%;
+}
+
+.card,.stack {
+  transition-property: top, height;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }

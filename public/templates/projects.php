@@ -3,23 +3,35 @@
   creating or which I have created by my self so far in my studies att MI 
 </p>
 
-<div class="projects">
-  <h2>Group Projects</h2>
-  <p>Projects in which I've been a member of a group to create.</p>
+<div class="stack">
+
+  <div class="card projects">
+    <header>
+      <h3 class="left">Group Projects</h3>
+      <div class="clear"></div>
+    </header>
+    <p>Projects in which I've been a member of a group to create.</p>
+  </div>
+
   <?php foreach($data["projects"] as $project) : ?>
     <?php if ($project->type == "group") : ?>
       <?php include "project.php" ?>
     <?php endif ?>
   <?php endforeach ?>
-</div>
 
-<div class="projects">
-  <h2>Solo Projects</h2>
-  <p>These here are some projects Iv'e created on my own.</p>
+  <div class="card projects">
+    <header>
+      <h3 class="left">Solo Projects</h3>
+      <div class="clear"></div>
+    </header>
+    <p>Projects in which I've been a member of a group to create.</p>
+    <p>These here are some projects Iv'e created on my own.</p>
+  </div>
+
   <?php foreach($data["projects"] as $project) : ?>
     <?php if ($project->type == "solo") : ?>
       <?php include "project.php" ?>
     <?php endif ?>
   <?php endforeach ?>
-</div>
 
+</div>

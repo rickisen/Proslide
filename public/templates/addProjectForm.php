@@ -1,4 +1,6 @@
-<h3>Add New Project</h3>
+<header>
+  <h3>Add New Project</h3>
+</header>
 <form action="/?/Admin/addProject" method="post" accept-charset="utf-8">
   <label for="type">Type</label>
   <select name="type">

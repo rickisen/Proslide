@@ -18,6 +18,39 @@ for (var i = 0, len = buttons.length; i < len; i++) {
 	
 }
 
+// add listeners to the arrow keys
+window.addEventListener("keyup", function(event){
+	var projId = activeProj(); 
+	// adds arrows, and vi-key bindings
+	switch (event.keyCode) {
+		case 39 :
+		case 76 :
+			if (projId) {
+				slideImage(projId, "next"); 
+			}
+			break;
+		case 37 :
+		case 72 :
+			if (projId) {
+				slideImage(projId, "prev"); 
+			}
+			break;
+
+		default:
+
+	}
+}, false); 
+
+function activeProj() {
+	var activeCard = document.getElementsByClassName("reVeiledCard")[0]; 
+	var sliderBtn = activeCard.getElementsByTagName("button"); 
+	if (sliderBtn.length > 0 ){
+		return sliderBtn[0].getAttribute("projId") ; 
+	} else {
+		return null;
+	}
+}
+
 // FUNCTIONS ========================================
 //
 function slideImage(projId, direction = "next") {

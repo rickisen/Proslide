@@ -80,6 +80,10 @@ form input, form textarea{
   padding: 5px;
 }
 
+.card header h3{
+  margin:0px;
+}
+
 .project header {
   background-color:rgb(66 , 66, 66);
 }
@@ -128,7 +132,7 @@ form input, form textarea{
 
 .imageCard input[type="checkbox"]{
   top:0.5em;
-  left:10.5em;
+  left:8.5em;
   margin:0;
   position:absolute;
   z-index:2;

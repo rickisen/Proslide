@@ -2,10 +2,6 @@
 <div class="stack">
 
   <div class="card projects" id="groupProjects">
-    <?php include "addProjectForm.php" ?>
-  </div>
-
-  <div class="card projects" id="groupProjects">
     <header>
       <h3>Group Projects</h3>
     </header>
@@ -28,5 +24,9 @@
       <?php include "editProject.php" ?>
     <?php endif ?>
   <?php endforeach ?>
+
+  <div class="card projects">
+    <?php include "addProjectForm.php" ?>
+  </div>
 
 </div>

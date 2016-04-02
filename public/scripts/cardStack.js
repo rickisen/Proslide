@@ -1,6 +1,6 @@
 "use strict"
-var cardHeight = 900; // should preffably be higher than the hogest card
-var cardHeadHeight = 60;
+var cardHeight = 800; // should preffably be higher than the highest card
+var cardHeadHeight = 35;
 
 setupPos(); // sets the correct position prop on all relevant elements
 addKeyEvents();
@@ -48,6 +48,9 @@ function stackAll() {
 
 			cards[i].style.height = "" + cardHeadHeight + "px";
 		}
+
+		// reveil the last card in the stack
+		reVielCard(cards[cards.length - 1]); 
 	}
 }
 
@@ -132,3 +135,4 @@ function addKeyEvents() {
 		}
 	}, false); 
 }
+

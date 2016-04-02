@@ -1,17 +1,5 @@
-<p> 
-  Here You will find some of the projects I've been involved with 
-  creating or which I have created by my self so far in my studies att MI 
-</p>
 
 <div class="stack">
-
-  <div class="card projects">
-    <header>
-      <h3 class="left">Group Projects</h3>
-      <div class="clear"></div>
-    </header>
-    <p>Projects in which I've been a member of a group to create.</p>
-  </div>
 
   <?php foreach($data["projects"] as $project) : ?>
     <?php if ($project->type == "group") : ?>
@@ -21,11 +9,9 @@
 
   <div class="card projects">
     <header>
-      <h3 class="left">Solo Projects</h3>
-      <div class="clear"></div>
+      <h3>Group Projects</h3>
     </header>
     <p>Projects in which I've been a member of a group to create.</p>
-    <p>These here are some projects Iv'e created on my own.</p>
   </div>
 
   <?php foreach($data["projects"] as $project) : ?>
@@ -33,5 +19,24 @@
       <?php include "project.php" ?>
     <?php endif ?>
   <?php endforeach ?>
+
+  <div class="card projects">
+    <header>
+      <h3>Solo Projects</h3>
+    </header>
+    <p>Projects in which I've been a member of a group to create.</p>
+    <p>These here are some projects Iv'e created on my own.</p>
+  </div>
+
+
+  <div class="card projects">
+    <header>
+      <h3>My School Projects</h3>
+    </header>
+    <p> 
+      Here You will find some of the projects I've been involved with 
+      creating or which I have created by my self so far in my studies att MI 
+    </p>
+  </div>
 
 </div>

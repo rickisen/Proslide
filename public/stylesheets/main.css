@@ -65,29 +65,6 @@ form input, form textarea{
   clear:both;
 }
 
-.card,.stack {
-  margin:0px -5px;
-  overflow:hidden;
-}
-
-.card{
-  left:5px;
-  box-shadow:0 0 3px rgba(10, 10, 10, 0.5);
-}
-
-.card header {
-  margin:-5px;
-  padding: 5px;
-}
-
-.card header h3{
-  margin:0px;
-}
-
-.project header {
-  background-color:rgb(66 , 66, 66);
-}
-
 .projects {
   background-color:rgb(210, 210, 210);
   padding:5px ;
@@ -96,7 +73,7 @@ form input, form textarea{
 }
 
 .project {
-  background-color:rgb(50 , 50, 50);
+  background-color:rgb(66 , 66, 66);
   color:rgb(188, 188, 188);
   padding:5px;
   border-top:5px solid rgb(200, 59, 40);
@@ -172,10 +149,29 @@ footer {
 
 /* card stuff be here */ 
 
-.card {
-  overflow:hidden; 
+.stack{
+  overflow:hidden;
+}
+
+.card,.stack {
+  margin:0px -5px;
+}
+
+.card{
+  left:5px;
+  box-shadow:0 0 3px rgba(10, 10, 10, 0.5);
   height:1000px;
   width:100%;
+  overflow-x:hidden;
+}
+
+.card header {
+  margin:-5px;
+  padding: 5px;
+}
+
+.card header h3{
+  margin:0px;
 }
 
 .card,.stack {

@@ -37,7 +37,6 @@ window.addEventListener("keyup", function(event){
 			break;
 
 		default:
-
 	}
 }, false); 
 

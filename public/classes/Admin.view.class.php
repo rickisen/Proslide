@@ -44,9 +44,11 @@ class Admin{
   }
 
   public static function removeImages(){
-    if (isset($_POST['removeFromProject']) && 
-        isset($_POST['removeImages']) && 
-        count($_POST['removeImages']) > 0 ){
+    if (
+      isset($_POST['removeFromProject']) && 
+      isset($_POST['removeImages']) && 
+      count($_POST['removeImages']) > 0 
+    ){
       $project = Project::newFromId($_POST['removeFromProject']);
 
       // Go through each image in the project and 
@@ -63,10 +65,26 @@ class Admin{
   public static function addProject(){
     // get the last projects id, and calculate a new one from that.
     $xmlDb = XmlDb::getInstance(); // load and the xml file
-
-    $newProject = new Project(Project::nextId(), $_POST['Title'], $_POST['Description'], $_POST['type']); 
-    $newProject->writeToProjectsXml(); 
-
+    
+    if (
+      isset($_POST['Title']) && 
+      isset($_POST['Description']) && 
+      isset($_POST['Github']) && 
+      isset($_POST['Link']) && 
+      isset($_POST['Date']) && 
+      isset($_POST['type']) 
+    ){
+      $newProject = new Project(
+        Project::nextId(), 
+        $_POST['Title'], 
+        $_POST['Description'], 
+        $_POST['Github'],
+        $_POST['Link'],
+        $_POST['Date'],
+        $_POST['type']
+      ); 
+      $newProject->writeToProjectsXml(); 
+    }
     header("location:/?/Admin/edit"); 
   }
 

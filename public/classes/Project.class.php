@@ -5,14 +5,25 @@ class Project {
   private $id;
   private $title;
   private $description;
+  private $github;
+  private $link;
+  private $date;
   private $type;
   private $images = array();
 
-  function __construct($id, $title, $description = "", $type = ""){
+  function __construct($id, $title, $description = "", $github = "", $link = "", $date = "", $type = ""){
     $this->id          = $id;
     $this->title       = $title;
     $this->description = $description;
+    $this->github      = $github;
+    $this->link        = $link;
     $this->type        = $type;
+
+    if (is_int($date)) {
+      $this->date = $date; 
+    }else{
+      $this->date = strtotime($date);
+    }
   }
 
   // Alternative constructor
@@ -28,13 +39,23 @@ class Project {
     }
 
     $ret = new Project(
-      (int)$sxeProject['id'], (string)$sxeProject['title'],
-      (string)$sxeProject->description, (string)$sxeProject['type'] );
+      (int)$sxeProject['id'], 
+      (string)$sxeProject['title'],
+      (string)$sxeProject->description, 
+      (string)$sxeProject->github, 
+      (string)$sxeProject->link, 
+      (int)$sxeProject->date, 
+      (string)$sxeProject['type'] 
+    );
 
     // attach images
     foreach($sxeProject->images->image as $image){
       $ret->images[] = new Image(
-        (string)$image['id'], (string)$image->src, (int)$sxeProject['id'], (string)$image->caption,(string)$image->title 
+        (string)$image['id'], 
+        (string)$image->src,
+        (int)$sxeProject['id'],
+        (string)$image->caption,
+        (string)$image->title 
       );
     }
 
@@ -83,6 +104,9 @@ class Project {
 
     // edit/add child nodes
     $sxeProject->description = $this->description;
+    $sxeProject->github      = $this->github;
+    $sxeProject->link        = $this->link;
+    $sxeProject->date        = $this->date;
 
     // edit/add attributes
     $sxeProject['title'] = $this->title;

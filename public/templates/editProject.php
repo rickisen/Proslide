@@ -2,7 +2,6 @@
 
   <header>
     <h3><?php echo $project->title ?></h3>
-    <p><?php echo $project->description ?></p>
   </header>
 
   <div class="container">
@@ -17,7 +16,6 @@
                 <input type="checkbox" value="<?php echo $image->id ?>" name="removeImages[]"/>
                 <img src="<?php echo $image->src ?>"/>
                 <h4><?php echo $image->title ?></h4>
-                <p><?php echo $image->caption ?></p>
               </div>
             <?php endforeach ?>
           </div>
@@ -33,5 +31,23 @@
       </fieldset>
     </div>
   </div>
+
+  <p><?php echo $project->description ?></p>
+
+  <?php if ($project->github) : ?>
+    <p>
+      <a href="<?php echo $project->github ?>">Github Project</a>
+    </p>
+  <?php endif ?>
+  
+  <?php if ($project->link) : ?>
+    <p>
+      <a href="<?php echo $project->link ?>">Visit</a>
+    </p>
+  <?php endif ?>
+
+  <?php if ($project->date) : ?>
+    <p> <?php echo date("Y-m-m", $project->date) ?> </p>
+  <?php endif ?>
 
 </div>

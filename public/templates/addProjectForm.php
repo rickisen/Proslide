@@ -13,9 +13,18 @@
   <br/>
 
   <label>Description</label>
-  <textarea name="Description">
+  <textarea cols="50" rows="10" name="Description">
   </textarea>
   <br/>
+
+  <label for="Github">Github</label>
+  <input type="text" name="Github">
+
+  <label for="Link">Link</label>
+  <input type="text" name="Link">
+  
+  <label for="Date">Date</label>
+  <input type="date" name="Date" placeholder="mm/dd/yyyy">
 
   <p><input type="submit" value="submit"></p>
 </form>

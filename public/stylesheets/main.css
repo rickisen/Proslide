@@ -19,6 +19,14 @@ a {
   color:rgb(50, 153, 187);
 }
 
+ul{ 
+  list-style-type: none;
+}
+
+ul.right li {
+  text-align:right;
+}
+
 #wrapper {
   background-color:rgb(233, 233, 233);
   width:960px;

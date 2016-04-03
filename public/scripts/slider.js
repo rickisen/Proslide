@@ -15,7 +15,6 @@ for (var i = 0, len = buttons.length; i < len; i++) {
 
 		slideImage(projId, direction);
 	}); 
-	
 }
 
 // recursive function that tries to return the first 
@@ -91,7 +90,6 @@ function slideImage(projId, direction = "next") {
 	currentImage.setAttribute("xmlid", nextImage.id); 
 	slider.getElementsByClassName("title")[0].textContent = nextImage.getElementsByTagName("title")[0].innerHTML;
 	slider.getElementsByClassName("caption")[0].textContent = nextImage.getElementsByTagName("caption")[0].innerHTML;
-
 }
 
 function getProjImagesFromXml(projId) {

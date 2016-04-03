@@ -1,5 +1,5 @@
 "use strict"
-var cardHeight = 0; 
+var cardHeight = 750; 
 var cardHeadHeightMax = 32;
 var cardHeadHeightMin = 5; 
 var cardHeadHeight = ( cardHeadHeightMax + cardHeadHeightMin ) / 2 ;
@@ -11,12 +11,9 @@ function init() {
 	var stacks = document.getElementsByClassName("stack");
 	for (var i = 0, len = stacks.length; i < len; i++) {
 		stacks[i].style.position = "relative";
-		
+
 		// get all cards in this stack, needed for calculating its height
 		var cards = stacks[i].getElementsByClassName("card");
-
-		// calculate the optimal card height
-		cardHeight = calcOptCardHieght(cards.length, 180); 
 
 		// calculate this stacks height
 		var stackHeight = cardHeight - cardHeadHeightMax + (cardHeadHeightMax * stacks[i].children.length ); 
@@ -29,7 +26,7 @@ function init() {
 			cards[i].style.zIndex = zIndex++;
 			cards[i].getElementsByTagName("header")[0].addEventListener("click", reVeilListener);
 		}
-	
+
 		// finaly stack all cards by calling the reveil card 
 		// function on the last card in the stack
 		reVielCard(cards[cards.length - 1]); 
@@ -155,6 +152,6 @@ function calcOptCardHieght(siblings, aboveBellow = 0) {
 		? window.innerHeight
 		: document.documentElement.offsetHeight; 
 
-	return windowHeight - aboveBellow - (siblings * cardHeadHeight); 
+		return windowHeight - aboveBellow - (siblings * cardHeadHeight); 
 }
 

@@ -5,8 +5,18 @@
   <title>Rickisen's School Projects</title>
   <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+
   <link rel="stylesheet" href="/stylesheets/normalize.css" type="text/css"  charset="utf-8">
-  <link rel="stylesheet" href="/stylesheets/main.css" type="text/css"  charset="utf-8">
+
+  <?php if ($data["loadview"] == "edit"):?>
+    <link rel="stylesheet" href="/stylesheets/admin.css"     type="text/css"  charset="utf-8">
+  <?php elseif($data["loadview"] == "projects"): ?>
+    <link rel="stylesheet" href="/stylesheets/slider.css"    type="text/css"  charset="utf-8">
+  <?php endif ?>
+
+  <link rel="stylesheet" href="/stylesheets/cardStack.css" type="text/css"  charset="utf-8">
+  <link rel="stylesheet" href="/stylesheets/main.css"      type="text/css"  charset="utf-8">
+
 </head>
 <body>
 <div id="wrapper">

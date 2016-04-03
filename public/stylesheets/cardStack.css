@@ -1,0 +1,28 @@
+
+.stack{
+  overflow:hidden;
+}
+
+.card{
+  left:5px;
+  box-shadow:0 0 3px rgba(10, 10, 10, 0.5);
+  height:1000px;
+  width:100%;
+  overflow-x:hidden;
+}
+
+.card,.stack {
+  margin:0px -5px;
+  transition-property: top, height;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.card header {
+  margin:-5px;
+  padding: 5px;
+}
+
+.card header h3{
+  margin:0px;
+}

@@ -1,0 +1,41 @@
+.darkDiv {
+  background-color: rgba(0, 0, 0, 0); 
+  color: rgba(255, 255, 255, 0); 
+  width:10%;
+  height:100%;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+}
+
+.darkDiv:hover {
+  text-decoration: underline;
+}
+
+.sliderImage:hover .darkDiv{
+  background-color: rgba(0, 0, 0, 0.2); 
+  color: rgba(255, 255, 255, 1); 
+}
+
+.sliderImage {
+  /* background-image:url(http://put.nu/files/okXkft9.jpg); */
+  background-size:cover;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position:top;
+  margin: 0 -5px;
+  max-width:960px;
+  height:500px;
+}
+
+.slider img {
+  margin: 0 -5px;
+  max-width:960px;
+}
+
+.darkDiv {
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}

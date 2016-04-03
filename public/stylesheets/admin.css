@@ -1,0 +1,63 @@
+form label{
+  display:block;
+  margin:1em 0 0 0;
+}
+
+form input, form textarea{
+  margin:1em 0 0 0;
+}
+
+legend {
+  font-size: 1.2em;
+}
+
+fieldset form{
+  height:100%;
+}
+
+.imageCard {
+  position:relative;
+}
+
+.imageCard input[type="checkbox"]{
+  top:0.5em;
+  left:8.5em;
+  margin:0;
+  position:absolute;
+  z-index:2;
+}
+
+.imageCard img{
+  width:10em;
+}
+
+/* utility  ==================== */ 
+.flexObject fieldset{
+  box-sizing:border-box;
+  height:100%;
+  padding-bottom:0.1em;
+}
+
+.container{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.vertical {
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.flexObject{
+  box-sizing:border-box;
+  flex:1;
+}
+
+.flexBig{
+  flex:2;
+}
+
+.vertical .flexObject{
+  text-align:center;
+}
+

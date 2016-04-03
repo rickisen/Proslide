@@ -1,10 +1,3 @@
-/* gamebookers by plamenjC licence C-BY-NC-SA */
-/* rgb(50, 153, 187); */
-/* rgb(255, 153, 0); */
-/* rgb(66, 66, 66); */
-/* rgb(233, 233, 233); */
-/* rgb(188, 188, 188); */
-
 body{
   background-image:url(http://put.nu/files/okXkft9.jpg);
   background-size:cover;
@@ -22,25 +15,8 @@ h1,h2,h3,h4,h5,h6,legend{
   font-weight: bold;
 }
 
-legend {
-  font-size: 1.2em;
-}
-
 a {
   color:rgb(50, 153, 187);
-}
-
-div {
-  box-sizing:border-box;
-}
-
-form label{
-  display:block;
-  margin:1em 0 0 0;
-}
-
-form input, form textarea{
-  margin:1em 0 0 0;
 }
 
 #wrapper {
@@ -51,18 +27,6 @@ form input, form textarea{
   box-shadow:0 4px 8px #222;
   border-top:5px solid rgb(50, 153, 187);
   box-sizing:border-box;
-}
-
-.left {
-  float:left;
-}
-
-.right {
-  float:right;
-}
-
-.clear {
-  clear:both;
 }
 
 .projects {
@@ -80,64 +44,6 @@ form input, form textarea{
   box-sizing:border-box;
 }
 
-.container{
-  display:flex;
-  flex-wrap:wrap;
-}
-
-.vertical {
-  flex-direction:column;
-  justify-content:space-between;
-}
-
-.flexObject{
-  box-sizing:border-box;
-  flex:1;
-}
-
-.flexBig{
-  flex:2;
-}
-
-.vertical .flexObject{
-  text-align:center;
-}
-
-.imageCard {
-  position:relative;
-}
-
-.imageCard input[type="checkbox"]{
-  top:0.5em;
-  left:8.5em;
-  margin:0;
-  position:absolute;
-  z-index:2;
-}
-
-.imageCard img{
-  width:10em;
-}
-
-.flexObject fieldset{
-  box-sizing:border-box;
-  height:100%;
-  padding-bottom:0.1em;
-}
-
-form .flexObject textarea {
-  /* height:100%; */
-}
-
-fieldset form{
-  height:100%;
-}
-
-.slider img {
-  margin: 0 -5px;
-  max-width:960px;
-}
-
 footer {
   border-top:5px solid rgb(20, 150, 40);
   box-sizing:border-box;
@@ -147,35 +53,27 @@ footer {
   padding:5px ;
 }
 
-/* card stuff be here */ 
+/* utility ==================== */
+.left  { float:left;  }
+.right { float:right; }
+.clear { clear:both;  }
 
-.stack{
-  overflow:hidden;
+/* makes an element feel clickable */
+.darkDiv, .card header, .linkLike {
+  cursor:pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.card,.stack {
-  margin:0px -5px;
-}
-
-.card{
-  left:5px;
-  box-shadow:0 0 3px rgba(10, 10, 10, 0.5);
-  height:1000px;
-  width:100%;
-  overflow-x:hidden;
-}
-
-.card header {
-  margin:-5px;
-  padding: 5px;
-}
-
-.card header h3{
-  margin:0px;
-}
-
-.card,.stack {
-  transition-property: top, height;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-}
+/* color theme: */
+/* "gamebookers" by plamenjC 
+ * licence C-BY-NC-SA */
+/* rgb(50, 153, 187); */
+/* rgb(255, 153, 0); */
+/* rgb(66, 66, 66); */
+/* rgb(233, 233, 233); */
+/* rgb(188, 188, 188); */

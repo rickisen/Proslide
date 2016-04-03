@@ -29,36 +29,36 @@ ul.right li {
 
 #wrapper {
   background-color:rgb(233, 233, 233);
-  width:960px;
-  margin:20px auto;
-  padding:5px;
-  box-shadow:0 4px 8px #222;
-  border-top:5px solid rgb(50, 153, 187);
+  width:60em;
+  margin:1.3em auto;
+  padding:0.3em;
+  box-shadow:0 0.3em 0.5em #222;
+  border-top:0.3em solid rgb(50, 153, 187);
   box-sizing:border-box;
 }
 
 .projects {
   background-color:rgb(210, 210, 210);
-  padding:5px ;
-  border-top:5px solid rgb(255, 153, 0);
+  padding:0.3em ;
+  border-top:0.3em solid rgb(255, 153, 0);
   box-sizing:border-box;
 }
 
 .project {
   background-color:rgb(66 , 66, 66);
   color:rgb(188, 188, 188);
-  padding:5px;
-  border-top:5px solid rgb(200, 59, 40);
+  padding:0.3em;
+  border-top:0.3em solid rgb(200, 59, 40);
   box-sizing:border-box;
 }
 
 footer {
-  border-top:5px solid rgb(20, 150, 40);
+  border-top:0.3em solid rgb(20, 150, 40);
   box-sizing:border-box;
   background-color:rgb(188,188,188);
   color:#fff;
-  margin:0px -5px -5px -5px;
-  padding:5px ;
+  margin:0 -0.3em -0.3em -0.3em;
+  padding:0.3em ;
 }
 
 /* utility ==================== */
@@ -75,6 +75,15 @@ footer {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+/* Responsive ====================*/
+@media(max-width:960px){
+  #wrapper{
+    background-image:url("http://127.0.0.1/dev/null");
+    width:100%;
+    margin:0;
+  }
 }
 
 /* color theme: */

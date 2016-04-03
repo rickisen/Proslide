@@ -14,24 +14,20 @@
 }
 
 .sliderImage:hover .darkDiv{
-  background-color: rgba(0, 0, 0, 0.2); 
+  background-color: rgba(0, 0, 0, 0.3); 
   color: rgba(255, 255, 255, 1); 
 }
 
 .sliderImage {
   /* background-image:url(http://put.nu/files/okXkft9.jpg); */
-  background-size:cover;
+  background-size:contain;
+  background-color:black;
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
-  background-position:top;
-  margin: 0 -5px;
-  max-width:960px;
-  height:500px;
-}
-
-.slider img {
-  margin: 0 -5px;
-  max-width:960px;
+  background-position:center;
+  margin: 0 -0.3em;
+  max-width:60em;
+  height:31em;
 }
 
 .darkDiv {

@@ -136,14 +136,12 @@ function reVielNextCard(direction) {
 
 function addKeyEvents() {
 	window.addEventListener("keyup", function(event){
-		// adds arrows, and vi-key bindings
+		// adds arrows
 		switch (event.keyCode) {
 			case 38 :
-			case 75 :
 				reVielNextCard("up"); 
 				break;
 			case 40 :
-			case 74 :
 				reVielNextCard("down"); 
 				break;
 		}

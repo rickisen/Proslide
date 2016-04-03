@@ -33,16 +33,13 @@ function findParent(suspect, parentClass) {
 // add listeners to the arrow keys
 window.addEventListener("keyup", function(event){
 	var projId = activeProj(); 
-	// adds arrows, and vi-key bindings
 	switch (event.keyCode) {
 		case 39 :
-		case 76 :
 			if (projId) {
 				slideImage(projId, "next"); 
 			}
 			break;
 		case 37 :
-		case 72 :
 			if (projId) {
 				slideImage(projId, "prev"); 
 			}
@@ -60,8 +57,6 @@ function activeProj() {
 	}
 }
 
-// FUNCTIONS ========================================
-//
 function slideImage(projId, direction = "next") {
 	// function that loads the next image in a slider.
 	// direction can be next or prev.

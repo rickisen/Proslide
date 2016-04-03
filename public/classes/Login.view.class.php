@@ -13,18 +13,15 @@ class Login{
     $_SESSION['currentUser'] = new User($_POST['userName'], $_POST['password']);
 
     if ($_SESSION['currentUser']->authenticate()){
-      require_once "Admin.view.class.php"; 
-      return Admin::edit();
+      header('location:/?/Admin/edit'); 
     } else {
-      require_once "Projects.view.class.php"; 
       unset($_SESSION['currentUser']);
-      return Projects::all();
+      header('location:/?/Login/form'); 
     }
   }
   
   public static function logout(){
       unset($_SESSION['currentUser']);
-      require_once "Projects.view.class.php"; 
-      return Projects::all();
+      header('location:/?/Projects/all'); 
   }
 }
